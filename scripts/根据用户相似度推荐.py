@@ -43,4 +43,4 @@ for uid in UIDs:
 data = shelve.open('../data/recommend')
 data['uid_only'] = result
 data.close()
-print('--progressing...\t100%\tok')
+print('\r--progressing...\t100%\tok')

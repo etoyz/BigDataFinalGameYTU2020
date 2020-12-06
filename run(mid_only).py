@@ -2,8 +2,8 @@
 import shelve
 import pandas as pd
 
-data = shelve.open('../data/srcData')
-data2 = shelve.open('../data/recommend')
+data = shelve.open('data/srcData')
+data2 = shelve.open('data/recommend')
 
 to_predict = data['to_predict']
 recommends_map = data2['mid_only']
@@ -27,4 +27,4 @@ t = pd.DataFrame({
 
 t.to_excel('result/1m.xlsx')
 
-print("写入到1m.xlsx！")
+print("已写入到1m.xlsx！")

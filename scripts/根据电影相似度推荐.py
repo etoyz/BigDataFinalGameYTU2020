@@ -56,4 +56,4 @@ for uid in data['UIDs']:
 data = shelve.open('../data/recommend')
 data['mid_only'] = result_m
 data.close()
-print('--progressing...\t100%\tok')
+print('\r--progressing...\t100%\tok')

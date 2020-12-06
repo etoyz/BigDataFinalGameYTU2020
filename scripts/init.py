@@ -16,7 +16,7 @@ os.system("python 将mid_xsd排序，xsd高的在上面，存到'mid_xsd_sorted'
 print('\r--reading...\t' + "90%", end='')
 os.system("python 存MIDs到srcData.py")
 os.system("python 构造一个key为mids,value为0的字典.py")
-print('--reading...\t' + "100%\tok")
+print('\r--reading...\t' + "100%\tok")
 
 print('Analysing...')
 os.system('python 根据电影相似度推荐.py')

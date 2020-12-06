@@ -2,8 +2,8 @@
 import shelve
 import pandas as pd
 
-data = shelve.open('../data/recommend')
-data2 = shelve.open('../data/srcData')
+data = shelve.open('data/recommend')
+data2 = shelve.open('data/srcData')
 uid_only = data['uid_only']
 mid_only = data['mid_only']
 
@@ -36,4 +36,4 @@ t = pd.DataFrame({
 })
 
 t.to_excel('result/3融合.xlsx')
-print('写入到3融合.xlsx')
+print('已写入到3融合.xlsx')
