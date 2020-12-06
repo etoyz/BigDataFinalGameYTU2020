@@ -1,6 +1,6 @@
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 uid_records = data['uid_records']
 xsd_2map = data['mid_xsd_sorted']
 
@@ -40,7 +40,7 @@ for record in uid_records.items():
     result_li.append(map_mid_rank)
 
     # 进度条相关
-    print('--progressing...\t' + str(jd) + "%", end='\r')
+    print('\r--progressing...\t' + str(jd) + "%", end='')
     tt += 1
     if tt == int(len(uid_records.items()) / 100 + 1):
         jd += 1
@@ -53,7 +53,7 @@ for uid in data['UIDs']:
     i += 1
 
 # %%
-data = shelve.open('data/recommend')
+data = shelve.open('../data/recommend')
 data['mid_only'] = result_m
 data.close()
 print('--progressing...\t100%\tok')

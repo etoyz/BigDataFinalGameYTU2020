@@ -1,7 +1,7 @@
 # %%
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 uid_records = data['uid_records']
 mid_records = data['mid_records']
 uid_xsd = data['uid_xsd_sorted']
@@ -63,8 +63,8 @@ for mid in data['MIDs']:
     i += 1
 
 # %%
-data = shelve.open('data/recommend')
+data = shelve.open('../data/recommend')
 data['uid_only'] = result_m
 data.close()
 print("processing...\t100%")
-print("结果已写入到data/recommend !!")
+print("结果已写入到../data/recommend !!")

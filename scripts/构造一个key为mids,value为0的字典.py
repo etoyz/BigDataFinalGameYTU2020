@@ -1,6 +1,6 @@
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 MIDs = data['MIDs']
 
 tm = {}

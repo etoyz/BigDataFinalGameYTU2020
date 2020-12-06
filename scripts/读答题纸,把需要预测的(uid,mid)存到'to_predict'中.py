@@ -1,7 +1,7 @@
 # %%
 import pandas as pd
 
-df = pd.read_excel('data/答题纸.xlsx')
+df = pd.read_excel('../data/答题纸.xlsx')
 UIDs = df[df.columns[0]]  # 电影相似度
 MIDs = df[df.columns[1]]
 
@@ -16,6 +16,6 @@ for u in UIDs:
 # %%
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 data['to_predict'] = to_predict
 data.close()

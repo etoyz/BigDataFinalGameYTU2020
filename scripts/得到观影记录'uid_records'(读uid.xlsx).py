@@ -1,7 +1,7 @@
 # %%
 import pandas as pd
 
-df = pd.read_excel('data/uid.xlsx')
+df = pd.read_excel('../data/uid.xlsx')
 UIDs = df[df.columns[0]]  # 电影相似度
 MIDs = df[df.columns[1]]
 # %%
@@ -30,6 +30,6 @@ for uid in UIDs:
 # %%
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 data['uid_records'] = uid_records
 data.close()

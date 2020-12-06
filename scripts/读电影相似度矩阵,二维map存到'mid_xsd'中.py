@@ -1,8 +1,8 @@
 # %%
 import pandas as pd
 
-df_xsd = pd.read_excel('data/电影相似度矩阵.xlsx')
-df_mids = pd.read_excel('data/midSort.xlsx')
+df_xsd = pd.read_excel('../data/电影相似度矩阵.xlsx')
+df_mids = pd.read_excel('../data/midSort.xlsx')
 # %%
 tm1 = {}
 x = 0
@@ -19,6 +19,6 @@ for midx in df_mids['MID']:
 # %%
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 data['mid_xsd'] = tm1
 data.close()

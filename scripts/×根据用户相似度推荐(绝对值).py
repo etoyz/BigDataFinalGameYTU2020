@@ -1,7 +1,7 @@
 # %%
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 uid_xsd = data['uid_xsd_sorted']
 UIDs = data['UIDs']
 uid_records = data['uid_records']
@@ -39,13 +39,13 @@ for uid in UIDs:
     result.update({uid: mid_similiest})
 
     # 进度条相关
-    print('progressing...\t' + str(jd) + "%", end='\r')
+    print('\rprogressing...\t' + str(jd) + "%", end='')
     tt += 1
     if tt == int(len(UIDs) / 100 + 1):
         jd += 1
         tt = 0
 
-data = shelve.open('data/recommend')
+data = shelve.open('../data/recommend')
 data['uid_only'] = result
 data.close()
 print('progressing...\t100%')

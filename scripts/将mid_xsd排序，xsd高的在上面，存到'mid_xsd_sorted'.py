@@ -1,7 +1,7 @@
 # %%
 import shelve
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 mid_xsd = data['mid_xsd']
 
 

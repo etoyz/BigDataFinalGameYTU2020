@@ -2,8 +2,8 @@
 import pandas as pd
 import shelve
 
-df_xsd = pd.read_excel('data/用户相似度矩阵.xlsx')
-UIDs = shelve.open('data/srcData')['UIDs']
+df_xsd = pd.read_excel('../data/用户相似度矩阵.xlsx')
+UIDs = shelve.open('../data/srcData')['UIDs']
 # %%
 tm1 = {}
 x = 0
@@ -19,6 +19,6 @@ for uidx in UIDs:
 
 # %%
 
-data = shelve.open('data/srcData')
+data = shelve.open('../data/srcData')
 data['uid_xsd'] = tm1
 data.close()

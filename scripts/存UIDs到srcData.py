@@ -1,7 +1,7 @@
 # %%
 import shelve
 
-srcData = shelve.open('data/srcData')
+srcData = shelve.open('../data/srcData')
 
 uid_records = srcData['uid_records']
 
