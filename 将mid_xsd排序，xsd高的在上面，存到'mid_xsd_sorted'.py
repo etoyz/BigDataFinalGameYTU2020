@@ -25,4 +25,3 @@ for it in mid_xsd.items():
 # %%
 data['mid_xsd_sorted'] = tm
 data.close()
-print('ready')

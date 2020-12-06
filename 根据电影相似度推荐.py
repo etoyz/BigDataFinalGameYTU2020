@@ -40,7 +40,7 @@ for record in uid_records.items():
     result_li.append(map_mid_rank)
 
     # 进度条相关
-    print('progressing...\t' + str(jd) + "%", end='\r')
+    print('--progressing...\t' + str(jd) + "%", end='\r')
     tt += 1
     if tt == int(len(uid_records.items()) / 100 + 1):
         jd += 1
@@ -56,4 +56,4 @@ for uid in data['UIDs']:
 data = shelve.open('data/recommend')
 data['mid_only'] = result_m
 data.close()
-print("结果已写入到data/recommend !!")
+print('--progressing...\t100%\tok')

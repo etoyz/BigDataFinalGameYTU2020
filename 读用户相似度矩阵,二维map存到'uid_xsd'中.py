@@ -22,4 +22,3 @@ for uidx in UIDs:
 data = shelve.open('data/srcData')
 data['uid_xsd'] = tm1
 data.close()
-print('ready')

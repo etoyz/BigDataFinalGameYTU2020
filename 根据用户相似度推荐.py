@@ -34,7 +34,7 @@ for uid in UIDs:
     result.update({uid: mid_map_ranked})
 
     # 进度条相关
-    print('progressing...\t' + str(jd) + "%", end='\r')
+    print('--progressing...\t' + str(jd) + "%", end='\r')
     tt += 1
     if tt == int(len(UIDs) / 100 + 1):
         jd += 1
@@ -43,5 +43,4 @@ for uid in UIDs:
 data = shelve.open('data/recommend')
 data['uid_only'] = result
 data.close()
-print('progressing...\t100%')
-print("OK")
+print('--progressing...\t100%\tok')
