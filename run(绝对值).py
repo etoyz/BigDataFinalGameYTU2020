@@ -52,5 +52,5 @@ t = pd.DataFrame({
     'tt': result
 })
 
-t.to_excel('result/3融合.xlsx')
+t.to_excel('result/3融合(绝对值).xlsx')
 print('已写入到3融合(绝对值).xlsx')
