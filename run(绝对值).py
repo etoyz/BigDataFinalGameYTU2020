@@ -13,25 +13,37 @@ to_predict = data2['to_predict']
 # k_mok = 180
 # k_umok = (200, 240)
 # 单独限制
-k_uok = 0
-k_mok = 0
+k_uok = 40
+k_mok = 40
 # 多重限制
-k_umok = (240, 240)
+k_umok = (0, 0)
 
 result = []
 for it in to_predict:
     uid = it[0]
-    u_re = list(uid_only[uid])
-    m_re = list(mid_only[uid])
+    u_rest = uid_only[uid]
+    m_rest = mid_only[uid]
+    u_res = []
+    m_res = []
+    for u_re in u_rest.items():
+        if u_re[1] > k_uok:
+            u_res.append(u_re[0])
+        else:
+            break
+    for m_re in m_rest.items():
+        if m_re[1] > k_mok:
+            m_res.append(m_re[0])
+        else:
+            break
 
     mid = it[1]
-    if mid in u_re[:k_uok]:
+    if mid in u_res:
         result.append(1)
         continue
-    if mid in m_re[:k_mok]:
+    if mid in m_res:
         result.append(1)
         continue
-    if mid in u_re[:k_umok[0]] and mid in m_re[:k_umok[1]]:
+    if mid in u_res and mid in m_res:
         result.append(1)
         continue
     result.append(0)
@@ -41,4 +53,4 @@ t = pd.DataFrame({
 })
 
 t.to_excel('result/3融合.xlsx')
-print('已写入到3融合.xlsx')
+print('已写入到3融合(绝对值).xlsx')
