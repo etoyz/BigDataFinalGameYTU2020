@@ -1,20 +1,30 @@
-import shelve
-
-data = shelve.open('data/srcData')
-records = data['uid_records']
-
 # %%
-def sort_by_values(mmap):
-    tlist = sorted(mmap.items(), key=lambda x: x[1], reverse=True)
-    tmap = {}
-    for t in tlist:
-        tmap.update({t[0]: t[1]})
-    return tmap
+import shelve
+import pandas as pd
+
+df = pd.read_excel('data/59.36.xlsx')
+data = shelve.open('data/recommend')
+_recs = data['_mid_only']
+
+out = list(df['Pred(0/1)'])
+uids = list(df['UID'])
+mids = list(df['MID'])
+
+k = 250
 
 
-tm = {}
+i = 0
+for uid, mid in zip(uids, mids):
+    _rect = list(_recs[uid].keys())
+    _rec = _rect[:k]
+    if mid in _rec:
+        out[i] = 0
+    i += 1
 
-for record in records.items():
-    tm.update({record[0]: len(record[1])})
 
-m = sort_by_values(tm)
+df = pd.DataFrame({
+    'uid': uids,
+    'out': out
+})
+
+df.to_excel('aaa.xlsx')
