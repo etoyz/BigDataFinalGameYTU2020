@@ -13,10 +13,10 @@ to_predict = data2['to_predict']
 # k_mok = 180
 # k_umok = (200, 240)
 # 单独限制
-k_uok = 100000
-k_mok = 100000
+k_uok = 10000000
+k_mok = 25
 # 多重限制
-k_umok = (15, 0)
+k_umok = (10000000, 1000000)
 
 result = []
 jd = 0

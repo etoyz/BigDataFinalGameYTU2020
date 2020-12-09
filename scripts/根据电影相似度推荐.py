@@ -15,6 +15,13 @@ def sort_by_values(mmap):
     return tmap
 
 
+def value_chu(mmap, k):
+    new_map = {}
+    for item in mmap.items():
+        new_map.update({item[0]: item[1] / k})
+    return new_map
+
+
 jd = tt = 0
 for record in uid_records.items():
     uid = record[0]
@@ -33,6 +40,8 @@ for record in uid_records.items():
             key = item[0]
             value = item[1] + m[key]
             map_mid.update({key: value})
+
+    map_mid = value_chu(map_mid, len(lit))
 
     # 相似度排序后的列表
     map_mid_rank = sort_by_values(map_mid)

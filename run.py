@@ -6,17 +6,16 @@ data = shelve.open('data/recommend')
 data2 = shelve.open('data/srcData')
 uid_only = data['uid_only']
 mid_only = data['mid_only']
+_mid_only = data['_mid_only']
 
 to_predict = data2['to_predict']
 
-# k_uok = 150
-# k_mok = 180
-# k_umok = (200, 240)
+# 59.35
 # 单独限制
 k_uok = 0
-k_mok = 0
+k_mok = 240
 # 多重限制
-k_umok = (240, 240)
+k_umok = (200, 300)
 
 result = []
 for it in to_predict:
